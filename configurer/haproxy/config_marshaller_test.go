@@ -35,7 +35,7 @@ frontend frontend_80
 
 backend backend_80
   mode tcp
-  server default-host.internal:8080
+  server server_default-host.internal_8080 default-host.internal:8080
 `))
 			})
 		})
@@ -58,7 +58,7 @@ frontend frontend_80
 
 backend backend_80_external-host.example.com
   mode tcp
-  server default-host.internal:8080
+  server server_default-host.internal_8080 default-host.internal:8080
 `))
 			})
 		})
@@ -83,11 +83,11 @@ frontend frontend_80
 
 backend backend_80
   mode tcp
-  server default-host.internal:8080
+  server server_default-host.internal_8080 default-host.internal:8080
 
 backend backend_80_external-host.example.com
   mode tcp
-  server sni-host.internal:9090
+  server server_sni-host.internal_9090 sni-host.internal:9090
 `))
 			})
 		})
@@ -113,7 +113,7 @@ frontend frontend_70
 
 backend backend_70
   mode tcp
-  server host-70.internal:7070
+  server server_host-70.internal_7070 host-70.internal:7070
 
 frontend frontend_80
   mode tcp
@@ -122,7 +122,7 @@ frontend frontend_80
 
 backend backend_80
   mode tcp
-  server host-80.internal:8080
+  server server_host-80.internal_8080 host-80.internal:8080
 
 frontend frontend_90
   mode tcp
@@ -131,7 +131,7 @@ frontend frontend_90
 
 backend backend_90
   mode tcp
-  server host-90.internal:9090
+  server server_host-90.internal_9090 host-90.internal:9090
 `))
 			})
 		})
@@ -158,15 +158,15 @@ frontend frontend_80
 
 backend backend_80
   mode tcp
-  server default-host.internal:8080
+  server server_default-host.internal_8080 default-host.internal:8080
 
 backend backend_80_host-1.example.com
   mode tcp
-  server host-1.internal:1111
+  server server_host-1.internal_1111 host-1.internal:1111
 
 backend backend_80_host-99.example.com
   mode tcp
-  server host-99.internal:9999
+  server server_host-99.internal_9999 host-99.internal:9999
 `))
 			})
 		})
@@ -190,9 +190,9 @@ frontend frontend_80
 
 backend backend_80
   mode tcp
-  server host-88.internal:8888
-  server host-99.internal:9999
-  server host-77.internal:7777
+  server server_host-88.internal_8888 host-88.internal:8888
+  server server_host-99.internal_9999 host-99.internal:9999
+  server server_host-77.internal_7777 host-77.internal:7777
 `))
 			})
 		})

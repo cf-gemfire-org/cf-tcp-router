@@ -73,7 +73,7 @@ func (cm configMarshaller) marshalHAProxyBackend(backendName string, backend mod
 	output.WriteString("\n  mode tcp")
 
 	for _, server := range backend {
-		output.WriteString(fmt.Sprintf("\n  server %s:%d", server.Address, server.Port))
+		output.WriteString(fmt.Sprintf("\n  server server_%s_%d %s:%d", server.Address, server.Port, server.Address, server.Port))
 	}
 
 	output.WriteString("\n")
